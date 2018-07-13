@@ -1,0 +1,23 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title All Logs
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.leaderboard.mono
+            table
+              tr
+                th Team
+                th Action
+                th Time
+              each log in logs
+                tr
+                  td= log.username
+                  td= log.action
+                  td= log.time

@@ -1,0 +1,27 @@
+//- extends layout
+//- 
+//- block content
+//-   section#intro
+//-     .container
+//-       .row
+//-         .seven.columns
+//-           h2.title(style='margin-bottom:0') Detailed Leaderboard
+//-           
+//-   section#main.grey
+//-     .container
+//-       .row
+//-         .twelve.columns
+//-           .card.leaderboard.smaller.mono
+//-             table.detailed
+//-               tr.header
+//-                 th Rank
+//-                 th Team
+//-                 th Funds
+//-               each team, index in leaderboard
+//-                 tr
+//-                   td= index + 1
+//-                   td= team.schoolName
+//-                   td $#{team.funds}
+//-                     each log in logs
+//-                       tr
+//-                         td= log.action

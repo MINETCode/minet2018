@@ -1,0 +1,235 @@
+button.cta {
+  width: 100%;
+  padding: 7.5px 0;
+  margin: 5px 0;
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
+  color: #FFF;
+  background: $blue;
+  text-align: center;
+  border: 1.5px solid $blue;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  outline: none;
+  &:hover {
+    background: $dark-blue;
+    border-color: $dark-blue;
+  }
+}
+
+#dashboard {
+  p.error {
+    color: $dark-blue;
+  }
+  .card {
+    margin-bottom: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    position: relative;
+    a.edit {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      text-transform: uppercase;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  }
+
+  h1.card-heading {
+    margin: 5px 0;
+    font-size: 2.8em;
+    font-weight: bold;
+  }
+
+  h2.card-subhead {
+    color: $dark-grey;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .totalFunds {
+    // background: $blue;
+    // color: #FFF;
+    h1 {
+      font-size: 4em;
+      color: $blue;
+      margin: 30px 0 0 0;
+    }
+  }
+
+  .team {
+    .six {
+      p.person {
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+        font-size: 0.95em;
+        img, span {
+          display: inline;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+          border-radius: 100%;
+          border: 2px solid #eee;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .logs {
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        padding: 2.5%;
+        &:nth-child(odd) {
+          background: $grey;
+        }
+        p {
+          margin: 0;
+          font-size: 0.95em;
+          text-transform: capitalize;
+          span {
+            &.logTime {
+              float: right;
+              text-transform: uppercase;
+              color: #AAA;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .startup {
+    .logo-container {
+      .logo-placeholder-container {
+        height: 100px;
+        width: 100px;
+        background: $blue;
+        color: #FFF;
+        margin: 20px auto 30px auto;
+        line-height: 100px;
+        border-radius: 6px;
+        font-size: 4em;
+      }
+      text-align: center;
+      img {
+        width: 150px;
+        margin: 30px 0 10px 0;
+      }
+    }
+    p {
+      font-size: 0.95em;
+    }
+  }
+
+  .slack {
+    p {
+      font-weight: 100;
+      margin-top: 2.5px;
+    }
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        p {
+          font-size: 1em;
+          label {
+            display: block;
+            font-weight: 800;
+          }
+          button {
+            float: right;
+            width: 35%;
+            text-align: center;
+            display: inline;
+            padding: 7.1px 5px;
+            letter-spacing: 0.3px;
+            border-radius: 4px;
+            background: none;
+            box-shadow: none;
+            border: 1px solid #eee;
+            outline: none;
+          }
+          button:focus {
+            background: #eee;
+          }
+          input, button {
+            display: inline;
+          }
+          input {
+            width: 62.5%;
+            display: inline;
+            padding: 10px 15px;
+            letter-spacing: 0.3px;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          input:disabled {
+            background: $grey;
+            border: 1px solid #eee;
+          }
+        }
+      }
+    }
+  }
+}
+
+form.team {
+  .card {
+    input:nth-of-type(even) {
+      margin-bottom: 50px;
+    }
+    input:last-child {
+      margin-bottom: 0;
+    }
+    input:disabled {
+      background: $grey;
+    }
+    &.submit {
+      input {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.form.manage {
+  form {
+    display: none;
+  }
+}
+
+.card.leaderboard {
+  padding: 0;
+  table {
+    width: 100%;
+    text-align: center;
+    th {
+      background: $dark-blue;
+      color: #fff;
+    }
+    th, td {
+      padding: 1.5%;
+    }
+    tr:nth-child(odd) {
+      background: $grey;
+    }
+  }
+}
+
+label.upload {
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

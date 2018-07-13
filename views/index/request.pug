@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Request Invite
+          p Fill out the form below if your team hasn’t recieved an invite yet.
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.form
+            // <h3 class="form-title mono">Invite Form</h3>
+            form.mono(action='/request', method='post')
+              label(for='insName') Name of institution:
+              input#insName(type='text', name='insName', placeholder='Name of institution', required='')
+              label(for='email') Contact email:
+              input#email(type='email', name='email', placeholder='Contact email', required='')
+              label(for='pName') Point of contact:
+              input#pName(type='text', name='pName', placeholder='Full name', required='')
+              label(for='links') Website/Relevant links:
+              textarea#links(name='links', placeholder='Website/Relevant links', maxlength='420', rows='10', required='', resizable='false')
+              input(type='submit', value='Request Invite')
+  section
+    .container
+      .row
+        .six.columns.event
+          h2.title Uber
+          p.grey-text.mono.participant-count For new users only
+          p
+            | This time around, we’re partnering with Uber to ferry teams to and from the event.
+          p
+            | First time riders can avail the promo code by accessing the promotions tab within the Uber app.
+        .six.columns.event.center
+          h2.title.placeholder  
+          p.grey-text.mono.participant-count Valid only on the day of the event
+          code.center.mono MINETX

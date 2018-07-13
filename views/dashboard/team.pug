@@ -1,0 +1,102 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Edit Team
+          p Update your team by submitting the form
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          form.mono.team(action='/dashboard/team', method='post')
+            
+            if error
+              p.mono.center.error= error
+              
+            h3.center.mono School Details
+        
+            .card.form
+              label(for='schoolName') School Name:
+              input#schoolName(type='text', name='schoolName', placeholder='School Name', value=currentUser.schoolName, disabled,required)
+              label(for='schoolEmail') School email:
+              input#schoolEmail(type='email', name='schoolEmail', placeholder='School Name', value=currentUser.email, disabled,required)
+              
+            h3.center.mono Design
+
+            .card.form
+              label(for='designParticipant1Name') Design Participant 1 Name
+              input#designParticipant1Name(type='text', name='designParticipant1Name', value=currentUser.team.design.p1.name, placeholder='Design Participant 1 Name')
+              label(for='designParticipant1Email') Design Participant 1 Email
+              input#designParticipant1Email(type='text', name='designParticipant1Email', value=currentUser.team.design.p1.email, placeholder='Design Participant 1 Email')
+              label(for='designParticipant2Name') Design Participant 2 Name
+              input#designParticipant2Name(type='text', name='designParticipant2Name', value=currentUser.team.design.p2.name, placeholder='Design Participant 2 Name')
+              label(for='designParticipant2Email') Design Participant 2 Email
+              input#designParticipant2Email(type='text', name='designParticipant2Email', value=currentUser.team.design.p2.email, placeholder='Design Participant 2 Email')
+              label(for='designParticipant3Name') Design Participant 3 Name
+              input#designParticipant3Name(type='text', name='designParticipant3Name', value=currentUser.team.design.p3.name,placeholder='Design Participant 3 Name')
+              label(for='designParticipant3Email') Design Participant 3 Email
+              input#designParticipant3Email(type='text', name='designParticipant3Email', value=currentUser.team.design.p3.email,placeholder='Design Participant 3 Email')
+                
+            h3.center.mono Quiz
+
+            .card.form
+              label(for='quizParticipant1Name') Quiz Participant 1 Name
+              input#quizParticipant1Name(type='text', name='quizParticipant1Name', value=currentUser.team.quiz.p1.name, placeholder='Quiz Participant 1 Name')
+              label(for='quizParticipant1Email') Quiz Participant 1 Email
+              input#quizParticipant1Email(type='text', name='quizParticipant1Email', value=currentUser.team.quiz.p1.email, placeholder='Quiz Participant 1 Email')
+              label(for='quizParticipant2Name') Quiz Participant 2 Name
+              input#quizParticipant2Name(type='text', name='quizParticipant2Name', value=currentUser.team.quiz.p2.name, placeholder='Quiz Participant 2 Name')
+              label(for='quizParticipant2Email') Quiz Participant 2 Email
+              input#quizParticipant2Email(type='text', name='quizParticipant2Email', value=currentUser.team.quiz.p2.email, placeholder='Quiz Participant 2 Email')
+                
+            h3.center.mono Programming
+
+            .card.form
+              label(for='programmingParticipant1Name') Programming Participant 1 Name
+              input#programmingParticipant1Name(type='text', name='programmingParticipant1Name', value=currentUser.team.programming.p1.name, placeholder='Programming Participant 1 Name')
+              label(for='programmingParticipant1Email') Programming Participant 1 Email
+              input#programmingParticipant1Email(type='text', name='programmingParticipant1Email', value=currentUser.team.programming.p1.email, placeholder='Programming Participant 1 Email')
+              label(for='programmingParticipant2Name') Programming Participant 2 Name
+              input#programmingParticipant2Name(type='text', name='programmingParticipant2Name', value=currentUser.team.programming.p2.name, placeholder='Programming Participant 2 Name')
+              label(for='programmingParticipant2Email') Programming Participant 2 Email
+              input#programmingParticipant2Email(type='text', name='programmingParticipant2Email', value=currentUser.team.programming.p2.email, placeholder='Programming Participant 2 Email')
+            
+            h3.center.mono Gaming
+
+            .card.form
+              label(for='gamingParticipant1Name') Gaming Participant 1 Name
+              input#gamingParticipant1Name(type='text', name='gamingParticipant1Name', value=currentUser.team.gaming.p1.name, placeholder='Gaming Participant 1 Name')
+              label(for='gamingParticipant1Email') Gaming Participant 1 Email
+              input#gamingParticipant1Email(type='text', name='gamingParticipant1Email', value=currentUser.team.gaming.p1.email, placeholder='Gaming Participant 1 Email')
+              label(for='gamingParticipant2Name') Gaming Participant 2 Name
+              input#gamingParticipant2Name(type='text', name='gamingParticipant2Name', value=currentUser.team.gaming.p2.name, placeholder='Gaming Participant 2 Name')
+              label(for='gamingParticipant2Email') Gaming Participant 2 Email
+              input#gamingParticipant2Email(type='text', name='gamingParticipant2Email', value=currentUser.team.gaming.p2.email, placeholder='Gaming Participant 2 Email')
+                
+            h3.center.mono Pitching
+
+            .card.form
+              label(for='pitchingParticipant1Name') Pitching Participant 1 Name
+              input#pitchingParticipant1Name(type='text', name='pitchingParticipant1Name', value=currentUser.team.pitching.p1.name, placeholder='Pitching Participant 1 Name')
+              label(for='pitchingParticipant1Email') Pitching Participant 1 Email
+              input#pitchingParticipant1Email(type='text', name='pitchingParticipant1Email', value=currentUser.team.pitching.p1.email, placeholder='Pitching Participant 1 Email')
+                
+            h3.center.mono Surprise
+
+            .card.form
+              label(for='surpriseParticipant1Name') Surprise Participant 1 Name
+              input#surpriseParticipant1Name(type='text', name='surpriseParticipant1Name', value=currentUser.team.surprise.p1.name, placeholder='Surprise Participant 1 Name')
+              label(for='surpriseParticipant1Email') Surprise Participant 1 Email
+              input#surpriseParticipant1Email(type='text', name='surpriseParticipant1Email', value=currentUser.team.surprise.p1.email, placeholder='Surprise Participant 1 Email')
+              label(for='surpriseParticipant2Name') Surprise Participant 2 Name
+              input#surpriseParticipant2Name(type='text', name='surpriseParticipant2Name', value=currentUser.team.surprise.p2.name, placeholder='Surprise Participant 2 Name')
+              label(for='surpriseParticipant2Email') Surprise Participant 2 Email
+              input#surpriseParticipant2Email(type='text', name='surpriseParticipant2Email', value=currentUser.team.surprise.p2.email, placeholder='Surprise Participant 2 Email')
+              
+            h3.center.mono &nbsp;
+            
+            .card.form.submit
+              input(type='submit', value='Save changes')

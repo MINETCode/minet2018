@@ -1,0 +1,63 @@
+/***************
+ * FAQs Styling *
+ ***************/
+
+#faqs {
+  .questions {
+    background: #FFF;
+    box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.02);
+    width: 800px;
+    margin: 0 auto;
+    max-width: 100%;
+    dl {
+      padding: 0;
+      font-size: 1.1em;
+      dt, dd {
+        margin: 0;
+        padding: 2.5% 5% 2.5% 2.5%;
+        list-style: none;
+        position: relative;
+      }
+      dt {
+        cursor: pointer;
+        font-weight: 800;
+        position: relative;
+        background: lighten($dark-grey, 27.5%);
+        box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.02);
+
+        &:after {
+          content: '+';
+          font-size: 1.8em;
+          font-weight: 100;
+          position: absolute;
+          display: block;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 20px;
+        }
+        &.active {
+          border-bottom: none;
+          &:after {
+            content: '-';
+          }
+        }
+        &:hover {
+          background: lighten($dark-grey, 25%);
+        }
+      }
+      dd {
+        font-weight: 100;
+        display: none;
+        &.active {
+          display: block;
+          border-bottom: 1px solid #EEE;
+        }
+      }
+    }
+  }
+}
+
+img.messenger-code {
+  max-width: 180px;
+  margin-top: -30px;
+}

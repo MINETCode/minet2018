@@ -1,0 +1,54 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Edit Startup
+          p Update your startup by submitting the form
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.form
+            if error
+              p.mono.center.error= error
+            form.mono(action='/dashboard/startup', method='post')
+              label(for='startupName') Startup Name:
+              input#startupName(type='text', name='startupName', placeholder='Startup Name', value=currentUser.startup.name required)
+              label(for='startupIndustry') Startup Industry:
+              select#startupIndustry(name='startupIndustry')
+                if currentUser.startup.industry
+                  option(selected) #{currentUser.startup.industry}
+                else 
+                  option(selected, disabled) Select Industry
+                option Food
+                option Travel
+                option Finance
+                option Music
+                option Security
+                option Entertainment
+                option Defence
+                option Retail
+                option Education
+                option Health
+                option Social Media
+                option Research
+                option Transport
+              label.upload 
+                a(href='https://ctrlq.org/images/', target='_blank') Upload image to CTRLQ
+              label(for='startupImage') Logo link:
+              input#startupImage(type='text', name='startupImage', placeholder="Paste the Direct Link link here" value=currentUser.startup.imageURL)
+              label(for='startupDescription') Startup Description:
+              textarea#startupDescription(type='text', name='startupDescription', placeholder='200 characters', max-length='200', required) #{currentUser.startup.description}
+              input(type='submit', value='Save changes')
+
+  script(type='text/javascript').
+    var currentIndustry = "!{currentUser.startup.industry}";
+    var selectobject = document.getElementById("startupIndustry");
+    for (var i=1; i<selectobject.length; i++){ 
+      if (selectobject.options[i].value == currentIndustry) {
+        selectobject.remove(i);
+      }
+    }

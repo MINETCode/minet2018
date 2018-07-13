@@ -1,0 +1,58 @@
+header.mono
+  ul#mobile-menu
+    i.ion-ios-close-empty#close
+    if currentUser
+      li
+        a(href='/dashboard') Home
+      li
+        a(href='/dashboard/team') Edit Team
+      li
+        a(href='/dashboard/startup') Edit Startup
+      li
+        a(href='/leaderboard') Leaderboard
+      li
+        a(href='/dashboard/logout') Logout
+      li
+        a(href='https://facebok.com/minet.mis') Facebook
+    else
+      li
+        a(href='/') Home
+      li
+        a(href='/') Leaderboard
+      li
+        a(href='/dashboard/login') Login
+      li
+        a(href='https://facebok.com/minet.mis') Facebook
+  .container
+    .twelve.columns
+      nav
+        .wrapper
+          ul
+            if currentUser
+              li
+                a(href='/dashboard/team') Edit Team
+              li
+                a(href='/dashboard/startup') Edit Startup
+              li
+                a.minet(href='/dashboard') MINET
+              li
+                a(href='/leaderboard') Leaderboard
+              li
+                a(href='/dashboard/logout') Logout
+            else
+              li
+                a(href='dashboard/team') Edit Team
+              li
+                a(href='/') View Startups
+              li
+                a.minet(href='/dashboard') MINET
+              li
+                a(href='/leaderboard') Leaderboard
+              li
+                a(href='/dashboard/login') Login
+      nav.mobile
+        .wrapper
+          i.ion-navicon#open
+          a.minet(href='/dashboard') MINET
+
+          

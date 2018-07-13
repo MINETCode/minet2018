@@ -1,0 +1,80 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Manage teams
+          p Select and manage teams
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.form.manage
+            #menu
+              button.cta#results-button Add results
+              button.cta#manual-button Manually edit stocks
+              button.cta#dq-button Disqualify team
+            if error
+              p.mono.center.error= error
+            
+            // ADD RESULTS
+            form.mono(action='/dashboard/manage-results', method='post')#results
+              label(for='teamName1') Team:
+              select#teamName1(name='teamName1')
+                option(selected, disabled) Select team
+                each team in teams
+                  option= team.schoolName
+              label(for='eventName') Event:
+              select#eventName(name='eventName')
+                option(selected, disabled) Select event
+                option Design
+                option Programming
+                option Gaming
+                option Quiz
+                option Surprise
+                option Pitching
+              label(for='eventPosition') Select position:
+              select#eventPosition(name='eventPosition')
+                option(selected, disabled) Select position
+                option 1
+                option 2
+                option 3
+              input(type='submit', value='Confirm')
+                
+            // ADD MANUALLY
+            form.mono(action='/dashboard/manage-manual', method='post')#manual
+              label(for='teamName2') Team:
+              select#teamName2(name='teamName2')
+                option(selected, disabled) Select team
+                each team in teams
+                  option= team.schoolName
+              label(for='stockValue') Stock value:
+              input#stockValue(type='number', name='stockValue', placeholder='Stock value (+ or - number)')
+              label(for='stockReason') Enter reason:
+              input#stockReason(type='text', name='stockReason', placeholder='Stock value')
+              input(type='submit', value='Confirm')
+                
+            // DISQUALIFY TEAM
+            form.mono(action='/dashboard/manage-dq', method='post')#dq
+              label(for='teamName3') Team:
+              select#teamName3(name='teamName3')
+                option(selected, disabled) Select team
+                each team in teams
+                  option= team.schoolName
+              input(type='submit', value='Disqualify')
+  section
+    .container
+      .row
+        .six.columns.event
+          h2.title Can&rsquo;t login?
+          p.grey-text.mono.participant-count Invalid credentials
+          p
+            | If you&rsquo;re absolutely sure that you aren&rsquo;t typing in the wrong credentials, reach out to us via our official Facebook page or Slack channel. 
+          p
+            | If you want to speak to us over the phone, DM us on Messenger and we’ll arrange a call with an official.
+
+        .six.columns.event.center
+          h2.title.placeholder  
+          img.messenger-code(src='/img/messenger.jpg')

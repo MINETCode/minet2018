@@ -1,0 +1,35 @@
+/***************
+ * Events Styling *
+ ***************/
+
+ .event {
+   h2.title {
+     margin-bottom: 15px;
+   }
+   .participant-count {
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 0.95em;
+     margin: 0 0 25px 0;
+   }
+   .card {
+     margin-top: 50px;
+     padding: 5%;
+     &.mono {
+       font-size: 0.85em;
+     }
+     ul {
+       margin-bottom: 0;
+       li {
+         list-style: circle;
+         margin-bottom: 2.5px;
+       }
+       li:last-child {
+         margin-bottom: 0;
+       }
+     }
+     p {
+       margin: 0;
+     }
+   }
+ }

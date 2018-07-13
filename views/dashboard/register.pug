@@ -1,0 +1,27 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Register Teams
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.form
+            if error
+              p.mono.center.error= error
+            form.mono(action='/dashboard/register', method='post')
+              label(for='schoolName') School Name:
+              input#schoolName(type='text', name='schoolName', placeholder='School Name', required)
+              label(for='username') Username:
+              input#username(type='text', name='username', placeholder='Username', required)
+              label(for='email') Email:
+              input#email(type='email', name='email', placeholder='Email', required)
+              label(for='password') Password:
+              input#password(type='password', name='password', placeholder='Password', required)
+              label(for='slackEmail') Slack email:
+              input#slackEmail(type='email', name='slackEmail', placeholder='Slack email', required)
+              input(type='submit', value='Register')

@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Login to Dashboard
+          p Login using the credentials emailed to you.
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.form
+            if error
+              p.mono.center.error= error
+            form.mono(action='/dashboard/login', method='post')
+              label(for='username') 
+              input#username(type='text', name='username', placeholder='Username', required)
+              label(for='password')
+              input#password(type='password', name='password', placeholder='Password', required)
+              input(type='submit', value='Login')
+  section
+    .container
+      .row
+        .six.columns.event
+          h2.title Can&rsquo;t login?
+          p.grey-text.mono.participant-count Invalid credentials
+          p
+            | If you&rsquo;re absolutely sure that you aren&rsquo;t typing in the wrong credentials, reach out to us via our official Facebook page or Slack channel. 
+          p
+            | If you want to speak to us over the phone, DM us on Messenger and we’ll arrange a call with an official.
+
+        .six.columns.event.center
+          h2.title.placeholder  
+          img.messenger-code(src='/img/messenger.jpg')

@@ -1,0 +1,116 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Dashboard: #{currentUser.schoolName}
+          p Manage and edit your team.
+  section#dashboard.grey.mono
+    .container
+      .row
+        .six.columns
+          .card.totalFunds
+            a.edit(href='/dashboard/funds') More
+            h1.center $#{currentUser.funds}
+            p.caption.center Total Funds
+          .card.logs
+            h1.card-heading.center Logs
+            ul#logsList
+              each log in logs
+                li
+                  p
+                    span.logText= log.action
+                    span.logTime= currentDate - log.time
+          
+        .six.columns
+          .card.startup
+            a.edit(href='/dashboard/startup') Edit
+            if currentUser.startup.name
+              h1.card-heading.center #{currentUser.startup.name}
+            else
+              h1.card-heading.center Startup Name
+            if currentUser.startup.industry
+              h2.card-subhead.center #{currentUser.startup.industry}
+            else
+              h2.card-subhead.center Industry
+            .logo-container
+              img.logo(src=currentUser.startup.imageURL)
+            p
+              u Description:
+            if currentUser.startup.description
+              p #{currentUser.startup.description}
+            else
+              p Startup description goes here.
+          
+          .card.slack
+            h1.card-heading.center Slack
+            ul
+              li
+                p
+                  label Email:
+                  input(type='email', value=currentUser.slack.email, disabled)
+                  button.copy Copy email
+              li
+                p
+                  label Password:
+                  input#transform(type='password', value=currentUser.slack.password, disabled)
+                  button.copy Copy password
+            a(href='https://minet-x.slack.com/' target='_blank')
+              button.cta Launch Slack
+            
+          .card.team
+            a.edit(href='/dashboard/team') Edit
+            h1.card-heading.center The Team
+            .row
+              .six.columns
+                if currentUser.team.design.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.design.p1.imageURL)
+                    span.name= currentUser.team.design.p1.name
+                if currentUser.team.design.p2.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.design.p2.imageURL)
+                    span.name= currentUser.team.design.p2.name
+                if currentUser.team.design.p3.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.design.p3.imageURL)
+                    span.name= currentUser.team.design.p3.name
+                if currentUser.team.quiz.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.quiz.p1.imageURL)
+                    span.name= currentUser.team.quiz.p1.name
+                if currentUser.team.quiz.p2.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.quiz.p2.imageURL)
+                    span.name= currentUser.team.quiz.p2.name
+                if currentUser.team.pitching.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.pitching.p1.imageURL)
+                    span.name= currentUser.team.pitching.p1.name
+              .six.columns
+                if currentUser.team.programming.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.programming.p1.imageURL)
+                    span.name= currentUser.team.programming.p1.name
+                if currentUser.team.programming.p2.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.programming.p2.imageURL)
+                    span.name= currentUser.team.programming.p2.name
+                if currentUser.team.gaming.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.gaming.p1.imageURL)
+                    span.name= currentUser.team.gaming.p1.name
+                if currentUser.team.gaming.p2.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.gaming.p2.imageURL)
+                    span.name= currentUser.team.gaming.p2.name
+                if currentUser.team.surprise.p1.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.surprise.p1.imageURL)
+                    span.name= currentUser.team.surprise.p1.name
+                if currentUser.team.surprise.p2.name
+                  p.person
+                    img.dp(src='https:' + currentUser.team.surprise.p2.imageURL)
+                    span.name= currentUser.team.surprise.p2.name

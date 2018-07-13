@@ -1,0 +1,125 @@
+extends ../layout
+
+block content
+  section#intro
+    .container
+      .row
+        .eight.columns
+          h2.title Schedule
+          p
+            | X 2018 will be held at the Mother's International School, Sri Aurobindo Marg, on August 8 - 9, 2018.
+          p All the events will be conducted at the venue the venue from 8am to 2pm.
+  section#schedule.grey.mono
+    .container
+      .row
+        .twelve.columns.main
+          button#day-one.toggle-btn.selected Day 1
+          button#day-two.toggle-btn Day 2
+          table#day-one.selected
+            thead
+            tr
+              td.axis Time
+              td.axis AV 1
+              td.axis AV 2
+              td.axis Primary Hall
+              td.axis Dance Room
+              td.axis Lab 2
+              td.axis Lab 3
+              td.axis Lab 4
+            tr
+              td.axis 8:30
+              td.mod(colspan='8') Registration
+            tr
+              td.axis 9:00
+              td.mod(colspan='8', rowspan='2') Inauguration and Keynote
+            tr
+              td.axis 9:30
+            tr
+              td.axis 10:00
+              td.mod(colspan='8') Mentoring Session
+            tr
+              td.axis 10:30
+              td.mod(rowspan='8') Pitching
+              td.mod(rowspan='8') Group Discussion
+              td.mod(rowspan='8') Quiz Prelims
+              td.mod(rowspan='8') Robotics
+              td.mod(rowspan='8') Gaming
+              td.mod(rowspan='8') Design
+              td.mod(rowspan='8') Programming
+            tr
+              td.axis 11:00
+            tr
+              td.axis 11:30
+            tr
+              td.axis 12:00
+            tr
+              td.axis 12:30
+            tr
+              td.axis 13:00
+            tr
+              td.axis 13:30
+            tr
+              td.axis 14:00
+          table#day-two
+            thead
+            tr
+              td.axis Time
+              td.axis AV 1
+              td.axis Lab 1
+              td.axis Lab 2
+              td.axis Lab 3
+              td.axis Lab 4
+              td.axis Hall of Grace
+            tr
+              td.axis 8:30
+              td.mod(colspan='8') Registration
+            tr
+              td.axis 9:00
+              td.mod(rowspan='5')
+              td.mod(rowspan='9') Surprise
+              td.mod(rowspan='9') Gaming
+              td.mod(rowspan='9') Design
+              td.mod(rowspan='9') Programming
+              td.mod(rowspan='5') Quiz Finals
+            tr
+              td.axis 9:30
+            tr
+              td.axis 10:00
+            tr
+              td.axis 10:30
+            tr
+              td.axis 11:00
+            tr
+              td.axis 11:30
+              td.mod(rowspan='4') Group Discussion
+              td.mod(rowspan='4') Pitching
+            tr
+              td.axis 12:00
+            tr
+              td.axis 12:30
+            tr
+              td.axis 13:00
+            tr
+              td.axis 13:30
+              td.mod(rowspan='2', colspan='8') Prize Distribution
+            tr
+              td.axis 14:00
+        .twelve.columns.mobile
+          a(href="/downloads/schedule1.pdf", download)
+            h1 Download PDF
+  section
+    .container
+      .row
+        .six.columns.event
+          h2.title Delays
+          p.grey-text.mono.participant-count Unavoidable circumstances
+          p
+            | While X will strictly follow the pre-decided schedule, we understand that there may be circumstances wherein a team is not able arrive on time.
+          p
+            | We encourage teams to stay in touch with any of our members or mentors via Slack, to work out a suitable plan in that case.
+          p
+            | Discounted rides are available to all attendees using the official Uber promo code.
+        .six.columns.event.center
+          h2.title.placeholder  
+          p.grey-text.mono.participant-count Valid only on the day of the event
+          code.center.rmono MINETX

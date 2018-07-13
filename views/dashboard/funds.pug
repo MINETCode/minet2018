@@ -1,0 +1,23 @@
+extends ../dashboard_layout
+
+block content
+  section#intro
+    .container
+      .row
+        .seven.columns
+          h2.title Fund History
+  section#form.grey
+    .container
+      .row
+        .twelve.columns
+          .card.leaderboard.mono
+            table
+              tr
+                th #
+                th Action
+                th Time
+              each log, index in logs
+                tr
+                  td= index + 1
+                  td= log.action
+                  td= log.time

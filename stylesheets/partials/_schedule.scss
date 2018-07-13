@@ -1,0 +1,61 @@
+/***************
+ * Schedule Styling *
+ ***************/
+
+ #schedule {
+   .mobile {
+     display: none;
+   }
+ 		text-align: center;
+ 		h4 {
+ 			margin-bottom: 0;
+ 		}
+ 		.toggle-btn {
+ 			margin-bottom: 40px;
+ 			background: #fff;
+ 			border: 1px solid #EEE;
+      padding: 5px 25px;
+      outline: none;
+ 			&.selected {
+ 				background: $blue;
+ 				color: #FFF;
+ 			}
+ 			&#day-one {
+ 				border-right: none;
+ 				border-radius: 5px 0 0 5px;
+ 			}
+ 			&#day-two {
+ 				border-left: none;
+ 				border-radius: 0 5px 5px 0;
+ 			}
+ 		}
+ 		table {
+ 			margin: 0 auto;
+ 			background: #FFF;
+ 			display: none;
+      font-weight: 100;
+      font-size: 1.1em;
+ 			&.selected {
+ 				display: table;
+ 			}
+ 			td, th {
+ 				text-align: center;
+ 				padding: 12.5px 27.5px;
+ 				border: 1px solid #EEE;
+        &.axis {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.9em;
+          font-weight: 600;
+        }
+ 				&.mod {
+ 					padding: 7.5px 17.5px;
+ 					text-transform: initial;
+ 					font-weight: 400;
+ 				}
+ 				span.vis-hidden {
+ 					visibility: hidden;
+ 				}
+ 			}
+ 		}
+ 	}

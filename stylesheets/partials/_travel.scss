@@ -1,0 +1,19 @@
+/***************
+ * Travel Styling *
+ ***************/
+
+#travel {
+ .mono {
+   font-weight: 100;
+   font-size: 0.9em;
+ }
+ .card {
+   height: 555px;
+   p:first-child {
+     margin-top: 0;
+   }
+ }
+ iframe {
+   box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.05);
+ }
+}
